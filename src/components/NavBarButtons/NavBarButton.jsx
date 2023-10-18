@@ -4,6 +4,8 @@ import Icon from "@mui/material/Icon";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectThemeProviderObject } from "../../statemanager/slices/ThemeProviderSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons";
 
 const NavBarButton = ({ ButtonName, ButtonImage, path, buttonStyle }) => {
   const navigate = useNavigate();
@@ -18,6 +20,8 @@ const NavBarButton = ({ ButtonName, ButtonImage, path, buttonStyle }) => {
 
   // Use createtheme from api to create theme for page
 
+  // <FontAwesomeIcon icon={solid("people-group")} />;
+
   return (
     <NavLink to={path}>
       <Button
@@ -30,7 +34,13 @@ const NavBarButton = ({ ButtonName, ButtonImage, path, buttonStyle }) => {
           paddingRight: "5vw",
           // color: buttonColor,
         }}
-        startIcon={<Icon>{ButtonImage}</Icon>}
+        startIcon={
+          ButtonName !== "Players" ? (
+            <Icon>{ButtonImage}</Icon>
+          ) : (
+            <FontAwesomeIcon icon={faPeopleGroup} />
+          )
+        }
         onClick={handleNavigate}
       >
         {ButtonName}

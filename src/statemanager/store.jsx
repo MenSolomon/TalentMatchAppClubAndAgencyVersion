@@ -5,6 +5,7 @@ import { combineReducers } from "@reduxjs/toolkit";
 // import incomeReducer from "./slices/incomeSlice";
 // import playerDetailsCardsCollapseReducer from "./slices/CollapsePlayerDisplayCards";
 import ThemeProviderReducer from "./slices/ThemeProviderSlice";
+import PlayersInAgencyReducer from "./slices/PlayersInAgencySlice";
 
 const persistConfig = {
   key: "root",
@@ -17,6 +18,7 @@ const reducer = combineReducers({
   //   files: incomeReducer,
   //   CollapsePlayerCards: playerDetailsCardsCollapseReducer,
   ThemeProviderSlice: ThemeProviderReducer,
+  PlayersInAgencySlice: PlayersInAgencyReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);
