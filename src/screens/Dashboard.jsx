@@ -24,10 +24,10 @@ const Dashboard = () => {
         <h3 style={{ margin: 0, float: "left" }} className="primaryTextColor">
           Profile dashboard
         </h3>{" "}
-        <IconButton sx={{ float: "right" }}>
+        {/* <IconButton sx={{ float: "right" }}>
           {" "}
           <BoxIcon IconClassName="bxs-video-plus" />{" "}
-        </IconButton>
+        </IconButton> */}
       </div>
 
       {/* // Cards  (upload video card , analytics summary card and other information card) */}

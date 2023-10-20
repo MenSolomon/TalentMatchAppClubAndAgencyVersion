@@ -4,8 +4,19 @@ import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
 import playerShadowImage from "../../assets/images/playernowatermarks.png";
 import youngerPlayerShadowImage from "../../assets/images/youngerplayer.png";
-import { Typography } from "@mui/material";
+import {
+  Input,
+  InputAdornment,
+  Pagination,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { Card } from "react-bootstrap";
+import CustomTextField from "../TextField/CustomTextField";
+import { AddAPhoto, Search } from "@mui/icons-material";
+import { useSelector } from "react-redux";
+import { selectPlayersInAgencyArray } from "../../statemanager/slices/PlayersInAgencySlice";
+import PlayerViewCardFromPlayersScreen from "../Cards/PlayerViewCardFromPlayersScreen";
 
 const style = {
   position: "absolute",
@@ -80,7 +91,105 @@ function CreateAPlayerProfileModal() {
           <p id="child-modal-description">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
           </p>
-          <Button onClick={handleClose}>Close Child Modal</Button>
+          <Button
+            sx={{ width: "10%", marginLeft: "80%" }}
+            onClick={handleClose}
+          >
+            Back
+          </Button>
+          <div
+            style={{
+              // background: "red",
+              width: "100%",
+              height: "80%",
+              display: "flex",
+              padding: "10px",
+            }}
+          >
+            {/* LEFT INPUT PLAYER DETAILS */}
+            <div
+              style={{
+                flex: ".5",
+                display: "flex",
+                flexDirection: "column",
+
+                // justifyContent: "flex-start",
+                // alignItems: "center",
+                // background: "peru",
+              }}
+            >
+              <div
+                style={{
+                  flex: "0.8",
+                  display: "flex",
+                  gap: "30px",
+                  alignItems: "center",
+                  flexDirection: "column",
+                }}
+              >
+                <CustomTextField placeholder={"Name"} />
+                <CustomTextField placeholder={"Date of birth"} />
+                <CustomTextField placeholder={"Nationality"} />
+                <CustomTextField placeholder={"Profile, image, etc"} />
+              </div>
+              <div style={{ flex: "0.2" }}>
+                {/* ========== */}
+                {/* BTN */}
+
+                <Button
+                  sx={{
+                    marginLeft: "80px",
+                  }}
+                  variant="contained"
+                >
+                  submit
+                </Button>
+                {/* ========== */}
+              </div>
+            </div>
+            {/* RIGHT SELECT IMAGES FROM FILES */}
+            <div style={{ flex: ".5", paddingLeft: "5%" }}>
+              {/* ============================== */}
+              <div
+                style={{
+                  border: "2px dotted",
+
+                  width: "20dvw",
+                  height: "10dvh",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignSelf: "center",
+                  alignItems: "center",
+                  marginBottom: "3%",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyItems: "baseline",
+                    gap: 10,
+                  }}
+                >
+                  <AddAPhoto />
+                  <Typography sx={{ fontWeight: "600" }}>
+                    Select or drag Images here
+                  </Typography>
+                </div>
+
+                {/* ref input */}
+                <div>
+                  <input
+                    type="file"
+                    accept=".jpg, .jpeg, .png"
+                    multiple
+                    style={{ display: "none" }}
+                  />
+                </div>
+              </div>
+              {/* =============================== */}
+            </div>
+          </div>
         </Box>
       </Modal>
     </React.Fragment>
@@ -97,6 +206,7 @@ function AddPlayerFromDatabaseModal() {
   const handleClose = () => {
     setOpen(false);
   };
+  const PlayerArray = useSelector(selectPlayersInAgencyArray);
 
   return (
     <React.Fragment>
@@ -139,7 +249,83 @@ function AddPlayerFromDatabaseModal() {
           <p id="child-modal-description">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
           </p>
-          <Button onClick={handleClose}>Close Child Modal</Button>
+          <Button
+            onClick={handleClose}
+            sx={{ width: "10%", marginLeft: "80%" }}
+          >
+            Back
+          </Button>
+          <div
+            style={{
+              // background: "red",
+              width: "100%",
+              height: "80%",
+              display: "flex",
+              // padding: "10px",
+              flexDirection: "column",
+            }}
+          >
+            {/* Search Bar */}
+            <div style={{ flex: "0.1" }}>
+              <TextField
+                id="input-with-icon-textfield"
+                label="Search"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <Search />
+                    </InputAdornment>
+                  ),
+                }}
+                variant="outlined"
+                size="small"
+              />
+            </div>
+            {/* Player View Cards */}
+            <div
+              style={{
+                flex: "0.8",
+                // background: "peru",
+                display: "flex",
+                flexWrap: "wrap",
+                overflowY: "scroll",
+              }}
+            >
+              {PlayerArray.map((data) => {
+                const {
+                  firstName,
+                  surName,
+                  Age,
+                  position,
+                  Nationality,
+                  jerseyNumber,
+                  image,
+                } = data;
+
+                return (
+                  <PlayerViewCardFromPlayersScreen
+                    image={image}
+                    surName={surName}
+                    age={Age}
+                    position={position}
+                    jerseyNumber={jerseyNumber}
+                    firstName={firstName}
+                    nationality={Nationality}
+                  />
+                );
+              })}
+            </div>
+            <div
+              style={{
+                flex: "0.1",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Pagination count={10} color="secondary" />
+            </div>
+          </div>
         </Box>
       </Modal>
     </React.Fragment>

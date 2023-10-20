@@ -29,7 +29,7 @@ const PlayerManagement = () => {
     "Inbox",
     "Interested Scouts",
     "Analytics",
-    "Settings",
+    // "Settings",
   ];
 
   const PlayerArray = useSelector(selectPlayersInAgencyArray);

@@ -7,6 +7,8 @@ import Inbox from "./screens/Inbox";
 import Analytics from "./screens/Analytics";
 import Players from "./screens/Players";
 import PlayerManagement from "./screens/PlayerManagement";
+import Login from "./screens/Login";
+import Signup from "./screens/Signup";
 
 const App = () => {
   return (
@@ -25,6 +27,8 @@ const App = () => {
             element={<PlayerManagement />}
           />
         </Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </div>
   );

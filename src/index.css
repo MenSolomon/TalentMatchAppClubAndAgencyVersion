@@ -49,3 +49,7 @@ tbody tr {
   color: #09142d;
   cursor: pointer;
 }
+
+ul {
+  list-style-type: none;
+}

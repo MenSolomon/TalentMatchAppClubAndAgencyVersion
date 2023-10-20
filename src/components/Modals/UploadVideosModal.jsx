@@ -108,7 +108,7 @@ export default function UploadVideoModal() {
                   justifyContent: "space-between",
                 }}
               >
-                <div style={{ background: "pink" }}>saving..</div>
+                <div>saving..</div>
                 <Feedback />
                 <Close />
               </div>
@@ -228,7 +228,7 @@ export default function UploadVideoModal() {
                   <div
                     style={{
                       flex: "0.5",
-                      background: "peru",
+                      // background: "peru",
                       display: "flex",
                     }}
                   >

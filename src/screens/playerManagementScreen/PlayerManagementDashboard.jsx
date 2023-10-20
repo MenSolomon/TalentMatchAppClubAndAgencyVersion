@@ -66,7 +66,6 @@ const PlayerManagementDashboard = () => {
             style={{
               width: "100%",
               height: "120%",
-
               borderRadius: "1vw",
               display: "flex",
               flexDirection: "column",

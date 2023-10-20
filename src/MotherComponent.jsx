@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import avatarImage from "./assets/images/avatar.jpg";
+import logoImage from "./assets/images/AppLogoBlue.png";
 import ProfileMenu from "./components/Menu/ProfileMenu";
 import LightAndDarkModeSwitch from "./components/Switch/LightAndDarkModeSwitch";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -212,10 +213,11 @@ const MotherComponent = () => {
           style={{
             flex: ".18",
             paddingTop: "1%",
-            display: "flex",
+            display: "grid",
+            placeContent: "center",
           }}
         >
-          <Avatar
+          {/* <Avatar
             sx={{
               // marginLeft: "2vw",
               width: 62,
@@ -226,7 +228,8 @@ const MotherComponent = () => {
             }}
             src={avatarImage}
           ></Avatar>
-          <h4 style={{ marginTop: "2vh" }}>Talent Match</h4>
+          <h4 style={{ marginTop: "2vh" }}>Talent Match</h4> */}
+          <img style={{ width: "110px" }} src={logoImage} />
         </div>
         {/* // Search Area? */}
         <div
