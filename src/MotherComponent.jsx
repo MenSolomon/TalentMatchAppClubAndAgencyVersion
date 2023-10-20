@@ -16,8 +16,8 @@ const MotherComponent = () => {
     { name: "Dashboard", icon: "dashboard", path: "/" },
     // The none values are for the savedFilters which is an accordion and not a button.. skipped over it in the map
     { name: "Players", icon: "people-group", path: "/players" },
-    { name: "Statistics", icon: "bar_chart_4_bars", path: "/Statistics" },
-    { name: "Favourites", icon: "favorite", path: "/favorites" },
+    // { name: "Statistics", icon: "bar_chart_4_bars", path: "/Statistics" },
+    // { name: "Favourites", icon: "favorite", path: "/favorites" },
     { name: "Inbox", icon: "move_to_inbox", path: "/inbox" },
     { name: "Analytics", icon: "monitoring", path: "/analytics" },
   ];

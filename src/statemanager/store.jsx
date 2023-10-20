@@ -11,7 +11,7 @@ const persistConfig = {
   key: "root",
   version: 1,
   storage,
-  // blacklist: ["CollapsePlayerCards"],
+  blacklist: ["PlayersInAgencySlice"],
 };
 
 const reducer = combineReducers({

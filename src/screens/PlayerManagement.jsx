@@ -28,6 +28,7 @@ const PlayerManagement = () => {
     "Videos",
     "Inbox",
     "Interested Scouts",
+    "Analytics",
     "Settings",
   ];
 
@@ -141,11 +142,11 @@ const PlayerManagement = () => {
 
         <div
           style={{
-            flex: ".25",
+            flex: ".22",
             // background: "white",
             paddingTop: "6vh",
-
-            padding: "2.1vw",
+            // background: "red",
+            padding: ".8vw",
           }}
         >
           <Card
@@ -166,7 +167,7 @@ const PlayerManagement = () => {
         </div>
 
         {/* // TABS AND SUBSCREEMS SECTION */}
-        <div style={{ flex: ".75" }}>
+        <div style={{ flex: ".78" }}>
           <PlayerManagementTabs
             PlayerManagementTabItemsArray={subscreensTabArray}
           />

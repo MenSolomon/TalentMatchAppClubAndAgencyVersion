@@ -128,7 +128,7 @@ const PlayerManagementDashboard = () => {
           <div
             className="cardBackground"
             style={{
-              flex: ".",
+              flex: "1",
 
               borderRadius: "1vw",
               paddingLeft: "2vw",
@@ -138,20 +138,6 @@ const PlayerManagementDashboard = () => {
             }}
           >
             <h5>Recent messages</h5>
-          </div>
-          <div
-            className="cardBackground"
-            style={{
-              flex: ".5",
-
-              borderRadius: "1vw",
-              paddingLeft: "2vw",
-              paddingRight: "2vw",
-              paddingTop: "3vh",
-              paddingBottom: "2vh",
-            }}
-          >
-            <h5>News</h5>
           </div>
         </div>
       </div>

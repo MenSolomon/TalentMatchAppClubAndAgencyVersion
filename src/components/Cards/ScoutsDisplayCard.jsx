@@ -5,11 +5,13 @@ const ScoutsDisplayCard = ({
   avatarUrl,
   UserName,
   AgencyName,
+  style,
 }) => {
   return (
     <Card
       className="cardBackground primaryTextColor"
       style={{
+        ...style,
         display: "flex",
         flexDirection: "column",
         width: "20vw",

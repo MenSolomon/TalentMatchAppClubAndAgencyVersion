@@ -1,6 +1,6 @@
 import { Button, IconButton } from "@mui/material";
 import BoxIcon from "../components/Icons/BoxIcon";
-import VideoImage from "../assets/images/videoImage.svg";
+import PlayerSkeletonImage from "../assets/images/PlayerSkeleton.png";
 import { useSelector } from "react-redux";
 import { selectThemeProviderObject } from "../statemanager/slices/ThemeProviderSlice";
 import UploadVideoModal from "../components/Modals/UploadVideosModal";
@@ -57,11 +57,14 @@ const Dashboard = () => {
                 placeItems: "center",
               }}
             >
-              <img src={VideoImage} style={{ width: "200px", color: "red" }} />
+              <img
+                src={PlayerSkeletonImage}
+                style={{ width: "200px", color: "red" }}
+              />
 
               <span style={{ textAlign: "center" }}>
-                Want to see metrics on your recent video? Upload and publish a
-                video to get started.{" "}
+                Want to add a player to your club/agency? Create new player
+                profile or add existing player from our database
               </span>
               <UploadVideoModal />
             </div>
@@ -93,7 +96,7 @@ const Dashboard = () => {
             >
               <h5>Profile Analytics</h5>
 
-              <h6>Total profile views</h6>
+              <h6>Total players under management</h6>
               <h4>12</h4>
             </div>
 
@@ -107,8 +110,8 @@ const Dashboard = () => {
             >
               <h6>Summary</h6>
               <h6 className="secondaryTextColor">Last 28 days</h6>
-              <h6>Views</h6>
-              <h6>Watch Time(hours)</h6>
+              <h6>Most viewed player</h6>
+              <h6 className="secondaryTextColor"> Ishak Shaibu </h6>
             </div>
 
             {/* TOP VIDEOS SECTION */}
