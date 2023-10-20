@@ -3,7 +3,7 @@ import BoxIcon from "../components/Icons/BoxIcon";
 import PlayerSkeletonImage from "../assets/images/PlayerSkeleton.png";
 import { useSelector } from "react-redux";
 import { selectThemeProviderObject } from "../statemanager/slices/ThemeProviderSlice";
-import UploadVideoModal from "../components/Modals/UploadVideosModal";
+import UploadPlayerToAgencyModal from "../components/Modals/UploadPlayerToAgencyModal";
 
 const Dashboard = () => {
   const ThemeProvider = useSelector(selectThemeProviderObject);
@@ -66,7 +66,7 @@ const Dashboard = () => {
                 Want to add a player to your club/agency? Create new player
                 profile or add existing player from our database
               </span>
-              <UploadVideoModal />
+              <UploadPlayerToAgencyModal />
             </div>
           </div>
         </div>

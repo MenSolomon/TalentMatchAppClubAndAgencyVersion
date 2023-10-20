@@ -43,3 +43,9 @@ tbody tr {
 .messageCard {
   border-left: 3px solid transparent;
 }
+
+.uploadPlayerModalCard:hover {
+  background-color: #e0fa55;
+  color: #09142d;
+  cursor: pointer;
+}

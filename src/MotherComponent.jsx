@@ -89,7 +89,10 @@ const MotherComponent = () => {
   }
 
   
+  .background{
+    background-color: ${background}
   
+  }
 
   .cardBackground{
     background-color: ${cardBackground}
@@ -167,6 +170,8 @@ const MotherComponent = () => {
 .css-1ua80n0-MuiInputBase-input-MuiOutlinedInput-input{
   color:${primaryTextColor}
 }
+
+
 
   `;
   //CLASS FOR TEXT FIELD BORDER .css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root
