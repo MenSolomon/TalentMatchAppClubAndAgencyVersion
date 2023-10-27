@@ -124,7 +124,14 @@ function CreateAPlayerProfileModal() {
                 <CountrySelect selectLabel="Date of birth" />
                 <CountrySelect selectLabel="Nationality" />
                 <CountrySelect selectLabel="Preffered foot" />
-                <AgeRangeSlider rangeName={"Height"} max={100} min={10} />
+                <TextField
+                  id="outlined-basic"
+                  label="Height"
+                  type="number"
+                  variant="outlined"
+                  fullWidth={true}
+                  sx={{ width: "23vw" }}
+                />
               </div>
               <div style={{ flex: "0.1" }}>
                 {/* BTN */}
@@ -159,10 +166,13 @@ function CreateAPlayerProfileModal() {
 
               {/* <CustomTextField placeholder={"Market value(optional)"} /> */}
               {/* MARKET VALUE RANGE */}
-              <AgeRangeSlider
-                rangeName={"Market value(optional)"}
-                max={300}
-                min={10}
+              <TextField
+                id="outlined-basic"
+                label="Market value(optional)"
+                type="number"
+                variant="outlined"
+                fullWidth={true}
+                sx={{ width: "23vw" }}
               />
             </div>
             {/* RIGHT SELECT IMAGES FROM FILES */}
